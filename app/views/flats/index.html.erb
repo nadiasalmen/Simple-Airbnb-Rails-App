@@ -1,5 +1,25 @@
-<div class="container">
+<div class="container my-3">
   <h1>All our Flats</h1>
   <p>All <%= @flats.count %> flats</p>
+  <div class="cards">
+    <% @flats.each do |flat| %>
+    <div class="card bg-light">
+      <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUaKxFsgciZj3QDA22VkArRqka5OraBDuTEA&usqp=CAU" %>
+      <div class="p-3 flex-grow-1 bg-light">
+        <h4><%= flat.name %></h4>
+        <p><%= flat.address %></p>
+        <div class="d-md-flex">
+          <p class="mx-2"><i class="fas fa-user-friends"></i>  <%= flat.number_of_guests %></p>
+          <p class="mx-2"><i class="fas fa-euro-sign"></i>  <%= flat.price_per_night %></p>
+        </div>
+      </div>
+      <div class="border"></div>
+      <div class="d-lg-flex p-3 justify-content-center bg-white text-center">
+        <%= link_to 'More info', "#", :class => "btn btn-outline-primary m-1 text-center p-auto"  %>
+        <%= link_to 'Edit', "#", :class => "btn btn-outline-warning m-1 text-center p-auto"  %>
+        <%= link_to 'Remove', "#", :class => "btn btn-outline-danger m-1 text-center p-auto"  %>
+      </div>
+    </div>
+    <% end %>
+  </div>
 </div>
-
