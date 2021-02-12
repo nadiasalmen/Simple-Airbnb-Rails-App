@@ -1,0 +1,49 @@
+<div class="container-fluid p-0" id="map">
+</div>
+<div class="container margin-top-negative">
+  <div class="row">
+    <div class="col-8">
+      <div class="bg-light shadow p-3 mb-4 rounded">
+        <h1><%= @flat.name %></h1>
+        <p class="mt-2 font-style-italic"><%= @flat.address %></p>
+      </div>
+      <div class="bg-light shadow p-3 mb-4 rounded h-100">
+        <h2>A bit more about this flat...</h2>
+        <p class="mt-2"><%= @flat.description %></p>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="bg-light shadow p-3 mb-4 rounded">
+        <h3><strong>Book this place!</strong></h3>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">From: </span>
+          <input type="text" class="form-control" placeholder="12/4/2021" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">To: </span>
+          <input type="text" class="form-control" placeholder="21/4/2021" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+        <button type="button" class="btn btn-success w-100 text-white">Book</button>
+      </div>
+      <div class="bg-light shadow p-3 mb-4 rounded">
+        <h2>Details</h2>
+        <div class="d-md-flex">
+          <p class="mx-2 my-0"><i class="fas fa-user-friends"></i>  <%= @flat.number_of_guests %></p>
+          <p class="mx-2 my-0"><i class="fas fa-euro-sign"></i>  <%= @flat.price_per_night %></p>
+        </div>
+      </div>
+      <div class="bg-light shadow p-3 mb-4 rounded d-flex align-items-center">
+        <p class="flex-grow-1 m-0 font-weight-bolder">Share</p>
+        <div class="d-md-flex">
+          <p class="mx-2 my-0"><i class="fab fa-facebook-square fa-2x"></i></p>
+          <p class="mx-2 my-0"><i class="fab fa-twitter-square fa-2x"></i></p>
+          <p class="mx-2 my-0"><i class="fab fa-pinterest-square fa-2x"></i></p>
+          <p class="mx-2 my-0"><i class="fas fa-envelope-square fa-2x"></i></p>
+        </div>
+      </div>
+      <div class="bg-light shadow p-3 mb-4 rounded">
+        <%= link_to 'Back to list', flats_path, :class => "btn btn-secondary w-100 text-white"  %>
+      </div>
+    </div>
+  </div>
+</div>
