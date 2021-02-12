@@ -4,7 +4,8 @@
   <div class="cards">
     <% @flats.each do |flat| %>
     <div class="card bg-light">
-      <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUaKxFsgciZj3QDA22VkArRqka5OraBDuTEA&usqp=CAU" %>
+      <div id="map" style="background-image: url('<%= image_path "#{flat.url}" %>'); height: 200px;">
+      </div>
       <div class="p-3 flex-grow-1 bg-light">
         <h4><%= flat.name %></h4>
         <p><%= flat.address %></p>
