@@ -1,4 +1,6 @@
 class Flat < ApplicationRecord
+  belongs_to :user
+
   # validations:
   validates :name, presence: true
   validates :address, presence: true
