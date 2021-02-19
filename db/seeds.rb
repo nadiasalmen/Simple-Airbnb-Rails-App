@@ -6,25 +6,39 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+BOOKING_STATUSES = ['Confirmed', 'Tentative', 'Cancelled']
+
 puts 'Cleaning database...'
 Flat.destroy_all
 User.destroy_all
 
-puts "Creating new users"
+puts 'Creating new users'
 
 user = User.new(
-  email: "nadia@airbnb.com",
-  password: "test1234",
+  email: 'nadia@airbnb.com',
+  password: 'test1234'
 )
 user.save!
 
 user = User.new(
-  email: "ivan@airbnb.com",
-  password: "test1234",
+  email: 'ivan@airbnb.com',
+  password: 'test1234'
 )
 user.save!
 
-puts "Creating new flats"
+user = User.new(
+  email: 'marcelo@airbnb.com',
+  password: 'test1234'
+)
+user.save!
+
+user = User.new(
+  email: 'adriana@airbnb.com',
+  password: 'test1234'
+)
+user.save!
+
+puts 'Creating new flats'
 
 flat = Flat.new(
   name: 'Amplio apartamento & terraza en Recoleta!',
@@ -40,6 +54,19 @@ flat.user = User.all.sample
 flat.save!
 puts "Created flat with id #{flat.id} - Belongs to user: #{flat.user.email}"
 
+puts "Creating bookings for flat #{flat.id}"
+
+5.times do
+  booking = Booking.new(
+    status: BOOKING_STATUSES.sample,
+    start_date: Date.today - rand(0..15),
+    end_date: Date.today + rand(0..15)
+  )
+  booking.user = (User.all - [flat.user]).sample
+  booking.flat = flat
+  booking.save!
+end
+
 flat = Flat.new(
   name: 'Dpto Remodelado a estrenar en Recoleta',
   address: 'Recoleta, Buenos Aires, Argentina',
@@ -51,6 +78,19 @@ flat = Flat.new(
 flat.user = User.all.sample
 flat.save!
 puts "Created flat with id #{flat.id} - Belongs to user: #{flat.user.email}"
+
+puts "Creating bookings for flat #{flat.id}"
+
+5.times do
+  booking = Booking.new(
+    status: BOOKING_STATUSES.sample,
+    start_date: Date.today - rand(0..15),
+    end_date: Date.today + rand(0..15)
+  )
+  booking.user = (User.all - [flat.user]).sample
+  booking.flat = flat
+  booking.save!
+end
 
 flat = Flat.new(
   name: 'Exclusive flat in the heart of Palermo Soho',
@@ -64,6 +104,19 @@ flat.user = User.all.sample
 flat.save!
 puts "Created flat with id #{flat.id} - Belongs to user: #{flat.user.email}"
 
+puts "Creating bookings for flat #{flat.id}"
+
+5.times do
+  booking = Booking.new(
+    status: BOOKING_STATUSES.sample,
+    start_date: Date.today - rand(0..15),
+    end_date: Date.today + rand(0..15)
+  )
+  booking.user = (User.all - [flat.user]).sample
+  booking.flat = flat
+  booking.save!
+end
+
 flat = Flat.new(
   name: 'Monoambiente Único en Buenos Aires',
   address: 'San Nicolás, Buenos Aires, Argentina',
@@ -75,6 +128,19 @@ flat = Flat.new(
 flat.user = User.all.sample
 flat.save!
 puts "Created flat with id #{flat.id} - Belongs to user: #{flat.user.email}"
+
+puts "Creating bookings for flat #{flat.id}"
+
+5.times do
+  booking = Booking.new(
+    status: BOOKING_STATUSES.sample,
+    start_date: Date.today - rand(0..15),
+    end_date: Date.today + rand(0..15)
+  )
+  booking.user = (User.all - [flat.user]).sample
+  booking.flat = flat
+  booking.save!
+end
 
 flat = Flat.new(
   name: 'Habitación privada en: departamento - Anfitrión: Mati & Cande',
@@ -88,6 +154,19 @@ flat.user = User.all.sample
 flat.save!
 puts "Created flat with id #{flat.id} - Belongs to user: #{flat.user.email}"
 
+puts "Creating bookings for flat #{flat.id}"
+
+5.times do
+  booking = Booking.new(
+    status: BOOKING_STATUSES.sample,
+    start_date: Date.today - rand(0..15),
+    end_date: Date.today + rand(0..15)
+  )
+  booking.user = (User.all - [flat.user]).sample
+  booking.flat = flat
+  booking.save!
+end
+
 flat = Flat.new(
   name: 'Departamento entero - Anfitrión: Valeria',
   address: 'Palermo, Buenos Aires, Argentina',
@@ -99,3 +178,16 @@ flat = Flat.new(
 flat.user = User.all.sample
 flat.save!
 puts "Created flat with id #{flat.id} - Belongs to user: #{flat.user.email}"
+
+puts "Creating bookings for flat #{flat.id}"
+
+5.times do
+  booking = Booking.new(
+    status: BOOKING_STATUSES.sample,
+    start_date: Date.today - rand(0..15),
+    end_date: Date.today + rand(0..15)
+  )
+  booking.user = (User.all - [flat.user]).sample
+  booking.flat = flat
+  booking.save!
+end
