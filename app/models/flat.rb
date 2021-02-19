@@ -1,5 +1,6 @@
 class Flat < ApplicationRecord
   belongs_to :user
+  has_many :bookings, dependent: :destroy
 
   # validations:
   validates :name, presence: true
