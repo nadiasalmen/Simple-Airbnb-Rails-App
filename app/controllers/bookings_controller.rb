@@ -14,7 +14,9 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.status = 'New'
     if @booking.save
-      redirect_to flats_path(@flat)
+      redirect_to flat_path(@flat)
+      # Same:
+      # redirect_to @flat
     else
       render 'flats/show', object: @flat
     end
