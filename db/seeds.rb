@@ -59,8 +59,8 @@ puts "Creating bookings for flat #{flat.id}"
 5.times do
   booking = Booking.new(
     status: BOOKING_STATUSES.sample,
-    start_date: Date.today - rand(0..15),
-    end_date: Date.today + rand(0..15)
+    checkin: Date.today - rand(0..15),
+    checkout: Date.today + rand(0..15)
   )
   booking.user = (User.all - [flat.user]).sample
   booking.flat = flat
@@ -84,8 +84,8 @@ puts "Creating bookings for flat #{flat.id}"
 5.times do
   booking = Booking.new(
     status: BOOKING_STATUSES.sample,
-    start_date: Date.today - rand(0..15),
-    end_date: Date.today + rand(0..15)
+    checkin: Date.today - rand(0..15),
+    checkout: Date.today + rand(0..15)
   )
   booking.user = (User.all - [flat.user]).sample
   booking.flat = flat
@@ -109,8 +109,8 @@ puts "Creating bookings for flat #{flat.id}"
 5.times do
   booking = Booking.new(
     status: BOOKING_STATUSES.sample,
-    start_date: Date.today - rand(0..15),
-    end_date: Date.today + rand(0..15)
+    checkin: Date.today - rand(0..15),
+    checkout: Date.today + rand(0..15)
   )
   booking.user = (User.all - [flat.user]).sample
   booking.flat = flat
@@ -134,8 +134,8 @@ puts "Creating bookings for flat #{flat.id}"
 5.times do
   booking = Booking.new(
     status: BOOKING_STATUSES.sample,
-    start_date: Date.today - rand(0..15),
-    end_date: Date.today + rand(0..15)
+    checkin: Date.today - rand(0..15),
+    checkout: Date.today + rand(0..15)
   )
   booking.user = (User.all - [flat.user]).sample
   booking.flat = flat
@@ -159,8 +159,8 @@ puts "Creating bookings for flat #{flat.id}"
 5.times do
   booking = Booking.new(
     status: BOOKING_STATUSES.sample,
-    start_date: Date.today - rand(0..15),
-    end_date: Date.today + rand(0..15)
+    checkin: Date.today - rand(0..15),
+    checkout: Date.today + rand(0..15)
   )
   booking.user = (User.all - [flat.user]).sample
   booking.flat = flat
@@ -184,8 +184,8 @@ puts "Creating bookings for flat #{flat.id}"
 5.times do
   booking = Booking.new(
     status: BOOKING_STATUSES.sample,
-    start_date: Date.today - rand(0..15),
-    end_date: Date.today + rand(0..15)
+    checkin: Date.today - rand(0..15),
+    checkout: Date.today + rand(0..15)
   )
   booking.user = (User.all - [flat.user]).sample
   booking.flat = flat

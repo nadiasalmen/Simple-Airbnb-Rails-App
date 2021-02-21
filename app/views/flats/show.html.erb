@@ -14,16 +14,17 @@
     </div>
     <div class="col-4">
       <div class="bg-light shadow p-3 mb-4 rounded">
-        <h3><strong>Book this place!</strong></h3>
-        <div class="input-group mb-3">
-          <span class="input-group-text" id="basic-addon1">From: </span>
-          <input type="text" class="form-control" placeholder="12/4/2021" aria-label="Username" aria-describedby="basic-addon1">
-        </div>
-        <div class="input-group mb-3">
-          <span class="input-group-text" id="basic-addon1">To: </span>
-          <input type="text" class="form-control" placeholder="21/4/2021" aria-label="Username" aria-describedby="basic-addon1">
-        </div>
-        <button type="button" class="btn btn-success w-100 text-white">Book</button>
+        <%= simple_form_for([@flat, @booking]) do |f| %>
+          <div class="input-group mb-3 d-flex align-items-center">
+            <span class="input-group-text mb-3" id="basic-addon1">From: </span>
+              <%= f.input :checkin, as: :string, label: false, placeholder: "12/4/2021" %>
+          </div>
+          <div class="input-group mb-3 d-flex align-items-center">
+            <span class="input-group-text mb-3" id="basic-addon1">To: </span>
+            <%= f.input :checkout, as: :string, label: false, placeholder: "20/4/2021" %>
+          </div>
+          <%= f.button :submit, data: {confirm: "Your booking is confirm" }, class: 'btn btn-success w-100 text-white' %>
+        <% end %>
       </div>
       <div class="bg-light shadow p-3 mb-4 rounded">
         <h2>Details</h2>

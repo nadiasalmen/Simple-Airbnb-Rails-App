@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_19_224233) do
+ActiveRecord::Schema.define(version: 2021_02_20_140616) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
     t.string "status"
-    t.datetime "end_date"
-    t.datetime "start_date"
+    t.date "checkout"
+    t.date "checkin"
     t.bigint "user_id", null: false
     t.bigint "flat_id", null: false
     t.datetime "created_at", precision: 6, null: false

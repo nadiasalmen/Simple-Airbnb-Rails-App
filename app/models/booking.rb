@@ -5,18 +5,18 @@ class Booking < ApplicationRecord
 
   # Validations:
   validates :status, presence: true
-  validates :start_date, presence: true
-  validates :end_date, presence: true
-  validates status, inclusion: { in: ['Confirmed', 'Tentative', 'Cancelled'] }
+  validates :checkin, presence: true
+  validates :checkout, presence: true
+  validates :status, inclusion: { in: ['New', 'Confirmed', 'Tentative', 'Cancelled'] }
   validate :dates
   validate :ownership
 
   private
 
   def dates
-    return if end_date.nil? || start_date.nil?
+    return if checkout.nil? || checkin.nil?
 
-    return errors.add(:end_date, 'must be greater than start date') if end_date < start_date
+    return errors.add(:checkout, 'must be greater than start date') if checkout < checkin
   end
 
   def ownership
