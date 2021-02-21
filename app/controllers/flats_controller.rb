@@ -5,9 +5,11 @@ class FlatsController < ApplicationController
   def index
     if params[:query].present?
       @query = params[:query]
-      @flats = Flat.where("name LIKE ?", "%#{params[:query]}%")
+      # @flats = Flat.where("name LIKE ?", "%#{params[:query]}%")
+      @flats = policy_scope(Flat).where("name LIKE ?", "%#{params[:query]}%").order(created_at: :desc)
     else
-      @flats = Flat.all
+      # @flats = Flat.all
+      @flats = policy_scope(Flat).order(created_at: :desc)
     end
   end
 

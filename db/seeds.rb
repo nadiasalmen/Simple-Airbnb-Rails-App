@@ -16,25 +16,29 @@ puts 'Creating new users'
 
 user = User.new(
   email: 'nadia@airbnb.com',
-  password: 'test1234'
+  password: 'test1234',
+  admin: true
 )
 user.save!
 
 user = User.new(
   email: 'ivan@airbnb.com',
-  password: 'test1234'
+  password: 'test1234',
+  admin: false
 )
 user.save!
 
 user = User.new(
   email: 'marcelo@airbnb.com',
-  password: 'test1234'
+  password: 'test1234',
+  admin: false
 )
 user.save!
 
 user = User.new(
   email: 'adriana@airbnb.com',
-  password: 'test1234'
+  password: 'test1234',
+  admin: false
 )
 user.save!
 
@@ -50,7 +54,7 @@ flat = Flat.new(
   number_of_guests: rand(2..4),
   url: "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2546&q=80"
 )
-flat.user = User.all.sample
+flat.user = (User.all - [User.first]).sample
 flat.save!
 puts "Created flat with id #{flat.id} - Belongs to user: #{flat.user.email}"
 
@@ -62,7 +66,7 @@ puts "Creating bookings for flat #{flat.id}"
     checkin: Date.today - rand(0..15),
     checkout: Date.today + rand(0..15)
   )
-  booking.user = (User.all - [flat.user]).sample
+  booking.user = (User.all - [flat.user] - [User.first]).sample
   booking.flat = flat
   booking.save!
 end
@@ -75,7 +79,7 @@ flat = Flat.new(
   number_of_guests: rand(2..4),
   url: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2550&q=80"
 )
-flat.user = User.all.sample
+flat.user = (User.all - [User.first]).sample
 flat.save!
 puts "Created flat with id #{flat.id} - Belongs to user: #{flat.user.email}"
 
@@ -87,7 +91,7 @@ puts "Creating bookings for flat #{flat.id}"
     checkin: Date.today - rand(0..15),
     checkout: Date.today + rand(0..15)
   )
-  booking.user = (User.all - [flat.user]).sample
+  booking.user = (User.all - [flat.user] - [User.first]).sample
   booking.flat = flat
   booking.save!
 end
@@ -100,7 +104,7 @@ flat = Flat.new(
   number_of_guests: rand(2..4),
   url: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2550&q=80"
 )
-flat.user = User.all.sample
+flat.user = (User.all - [User.first]).sample
 flat.save!
 puts "Created flat with id #{flat.id} - Belongs to user: #{flat.user.email}"
 
@@ -112,7 +116,7 @@ puts "Creating bookings for flat #{flat.id}"
     checkin: Date.today - rand(0..15),
     checkout: Date.today + rand(0..15)
   )
-  booking.user = (User.all - [flat.user]).sample
+  booking.user = (User.all - [flat.user] - [User.first]).sample
   booking.flat = flat
   booking.save!
 end
@@ -125,7 +129,7 @@ flat = Flat.new(
   number_of_guests: rand(2..4),
   url: "https://images.unsplash.com/photo-1575517111478-7f6afd0973db?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2550&q=80"
 )
-flat.user = User.all.sample
+flat.user = (User.all - [User.first]).sample
 flat.save!
 puts "Created flat with id #{flat.id} - Belongs to user: #{flat.user.email}"
 
@@ -137,7 +141,7 @@ puts "Creating bookings for flat #{flat.id}"
     checkin: Date.today - rand(0..15),
     checkout: Date.today + rand(0..15)
   )
-  booking.user = (User.all - [flat.user]).sample
+  booking.user = (User.all - [flat.user] - [User.first]).sample
   booking.flat = flat
   booking.save!
 end
@@ -150,7 +154,7 @@ flat = Flat.new(
   number_of_guests: rand(2..4),
   url: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2167&q=80"
 )
-flat.user = User.all.sample
+flat.user = (User.all - [User.first]).sample
 flat.save!
 puts "Created flat with id #{flat.id} - Belongs to user: #{flat.user.email}"
 
@@ -162,7 +166,7 @@ puts "Creating bookings for flat #{flat.id}"
     checkin: Date.today - rand(0..15),
     checkout: Date.today + rand(0..15)
   )
-  booking.user = (User.all - [flat.user]).sample
+  booking.user = (User.all - [flat.user] - [User.first]).sample
   booking.flat = flat
   booking.save!
 end
@@ -175,7 +179,7 @@ flat = Flat.new(
   number_of_guests: rand(2..4),
   url: "https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2550&q=80"
 )
-flat.user = User.all.sample
+flat.user = (User.all - [User.first]).sample
 flat.save!
 puts "Created flat with id #{flat.id} - Belongs to user: #{flat.user.email}"
 
@@ -187,7 +191,7 @@ puts "Creating bookings for flat #{flat.id}"
     checkin: Date.today - rand(0..15),
     checkout: Date.today + rand(0..15)
   )
-  booking.user = (User.all - [flat.user]).sample
+  booking.user = (User.all - [flat.user] - [User.first]).sample
   booking.flat = flat
   booking.save!
 end

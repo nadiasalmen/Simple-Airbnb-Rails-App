@@ -21,7 +21,9 @@
           <%= link_to "Messages", root_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Add Flat", new_flat_path, class: "btn btn-outline-info mx-1" %>
+          <% if policy(Flat).new? %>
+            <%= link_to "Add Flat", new_flat_path, class: "btn btn-outline-info mx-1" %>
+          <% end %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://avatars.githubusercontent.com/u/60677572?v=4", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

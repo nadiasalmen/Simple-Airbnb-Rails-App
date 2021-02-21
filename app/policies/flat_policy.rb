@@ -14,6 +14,10 @@ class FlatPolicy < ApplicationPolicy
     true
   end
 
+  def index?
+    true
+  end
+
   def show?
     true
   end
@@ -26,8 +30,22 @@ class FlatPolicy < ApplicationPolicy
   # end
 
   def update?
+    user_is_owner_or_admin?
+  end
+
+  def destroy?
+    user_is_owner_or_admin?
+  end
+
+  private
+
+  def user_is_owner_or_admin?
     # current_user => user
     # authorized instance variable => record (eg: @flat)
-    user == record.user
+    if user.nil?
+      false
+    else
+      user == record.user || user.admin
+    end
   end
 end
