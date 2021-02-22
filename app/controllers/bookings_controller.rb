@@ -13,6 +13,7 @@ class BookingsController < ApplicationController
     @booking.flat = @flat
     @booking.user = current_user
     @booking.status = 'New'
+    authorize @booking
     if @booking.save
       redirect_to flat_path(@flat)
       # Same:
