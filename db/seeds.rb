@@ -5,10 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "open-uri"
 
 BOOKING_STATUSES = ['Confirmed', 'Tentative', 'Cancelled']
 
 puts 'Cleaning database...'
+Booking.destroy_all
 Flat.destroy_all
 User.destroy_all
 
@@ -19,6 +21,8 @@ user = User.new(
   password: 'test1234',
   admin: true
 )
+file = URI.open('https://i1.wp.com/noticieros.televisa.com/wp-content/uploads/2020/06/como-hacer-avatar-facebook.jpg?fit=1200%2C720&ssl=1')
+user.avatar.attach(io: file, filename: "#{user.email}.png", content_type: 'image/png')
 user.save!
 
 user = User.new(
@@ -26,6 +30,8 @@ user = User.new(
   password: 'test1234',
   admin: false
 )
+file = URI.open('https://www.com.es/wp-content/uploads/2020/06/avatar-facebook.jpg')
+user.avatar.attach(io: file, filename: "#{user.email}.png", content_type: 'image/png')
 user.save!
 
 user = User.new(
@@ -33,6 +39,8 @@ user = User.new(
   password: 'test1234',
   admin: false
 )
+file = URI.open('https://e00-marca.uecdn.es/assets/multimedia/imagenes/2020/06/04/15912219730543.jpg')
+user.avatar.attach(io: file, filename: "#{user.email}.png", content_type: 'image/png')
 user.save!
 
 user = User.new(
@@ -40,6 +48,8 @@ user = User.new(
   password: 'test1234',
   admin: false
 )
+file = URI.open('https://i.pinimg.com/originals/30/24/f8/3024f8d283b734bd6b7e4fc5531fe2e9.png')
+user.avatar.attach(io: file, filename: "#{user.email}.png", content_type: 'image/png')
 user.save!
 
 puts 'Creating new flats'

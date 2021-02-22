@@ -26,7 +26,11 @@
           <% end %>
         </li>
         <li class="nav-item dropdown">
-          <%= image_tag "https://avatars.githubusercontent.com/u/60677572?v=4", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% if current_user.avatar.present? %>
+            <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% else %>
+              <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS9vVq6mgq8Q3i3rKwV_FUYAGwDhq8VK1x0A&usqp=CAU", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% end %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Action", root_path, class: "dropdown-item" %>
             <%= link_to "Another action", root_path, class: "dropdown-item" %>
