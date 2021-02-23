@@ -28,19 +28,25 @@
       </div>
     </div>
     <div class="col-4">
-      <div class="bg-light shadow p-3 mb-4 rounded">
-        <%= simple_form_for([@flat, @booking]) do |f| %>
-          <div class="input-group mb-3 d-flex align-items-center">
-            <span class="input-group-text mb-3" id="basic-addon1">From: </span>
-              <%= f.input :checkin, as: :string, label: false, placeholder: "12/4/2021" %>
-          </div>
-          <div class="input-group mb-3 d-flex align-items-center">
-            <span class="input-group-text mb-3" id="basic-addon1">To: </span>
-            <%= f.input :checkout, as: :string, label: false, placeholder: "20/4/2021" %>
-          </div>
-          <%= f.button :submit, "Book", class: 'btn btn-success w-100 text-white' %>
-        <% end %>
-      </div>
+      <% if @flat.user == current_user %>
+        <div class="bg-light shadow p-3 mb-4 rounded">
+          <%= link_to 'Check your flat bookings', "#", class: 'btn btn-success w-100 text-white'  %>
+        </div>
+      <% else %>
+        <div class="bg-light shadow p-3 mb-4 rounded">
+          <%= simple_form_for([@flat, @booking]) do |f| %>
+            <div class="input-group mb-3 d-flex align-items-center">
+              <span class="input-group-text mb-3" id="basic-addon1">From: </span>
+                <%= f.input :checkin, as: :string, label: false, placeholder: "12/4/2021" %>
+            </div>
+            <div class="input-group mb-3 d-flex align-items-center">
+              <span class="input-group-text mb-3" id="basic-addon1">To: </span>
+              <%= f.input :checkout, as: :string, label: false, placeholder: "20/4/2021" %>
+            </div>
+            <%= f.button :submit, "Book", class: 'btn btn-success w-100 text-white' %>
+          <% end %>
+        </div>
+      <% end %>
       <div class="bg-light shadow p-3 mb-4 rounded">
         <h2>Details</h2>
         <div class="d-md-flex">
@@ -58,8 +64,12 @@
         </div>
       </div>
       <div class="bg-light shadow p-3 mb-4 rounded">
-        <%= link_to 'Edit flat', edit_flat_path(@flat), :class => "btn btn-secondary w-100 text-white m-1"  %>
-        <%= link_to 'Remove flat', flat_path(@flat), method: :delete, data: {confirm: "Are you sure?" }, :class => "btn btn-secondary w-100 text-white m-1"  %>
+        <% if policy(@flat).edit? %>
+          <%= link_to 'Edit flat', edit_flat_path(@flat), :class => "btn btn-secondary w-100 text-white m-1"  %>
+        <% end %>
+        <% if policy(@flat).destroy? %>
+          <%= link_to 'Remove flat', flat_path(@flat), method: :delete, data: {confirm: "Are you sure?" }, :class => "btn btn-secondary w-100 text-white m-1"  %>
+        <% end %>
         <%= link_to 'Back to list', flats_path, :class => "btn btn-secondary w-100 text-white m-1"  %>
       </div>
     </div>
