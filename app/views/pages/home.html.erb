@@ -1,3 +1,132 @@
 <h1>HOMEPAGE</h1>
 
 <%= link_to 'Ir a los departamentos', flats_path, :class => "btn btn-outline-primary m-1 text-center p-auto"  %>
+
+<!-- banner -->
+
+    <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://unsplash.it/1200/600');">
+      <div class="banner-content">
+        <h1>Welcome Home</h1>
+        <p>Rent unique places to stay from local hosts in 190+ countries. How it works</p>
+        <a class="btn btn-primary btn-lg">How it works</a>
+      </div>
+    </div>
+    <!-- features -->
+
+      <div class="container text-center padded">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="card features">
+              <img src="images/globe.png" alt="globe">
+              <h4>Discover the world</h4>
+              <p>The earth is your new home.</p>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="card features">
+              <img src="images/dollar.png" alt="dollar">
+              <h4>Pay online</h4>
+              <p>No cash issues anymore.</p>
+            </div>
+          </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <div class="card features">
+            <img src="images/beer.png" alt="beer">
+            <h4>Meet people</h4>
+            <p>Discover new culture and lifestyle.</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <div class="card features">
+            <img src="images/heart.png" alt="heart">
+            <h4>Share and love</h4>
+            <p>Join a community you will love.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- next trip -->
+    <div class="container">
+      <div class="cards-container">
+        <div class="row">
+          <div class="col-xs-12 col-md-4">
+            <div class="card">
+              <div class="card-body" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('images/card-brussels.jpeg');">
+                <div class="card-category">
+                  <h3>Brussel</h3>
+                </div>
+                <div class="card-desc">
+                  <h2>Seb's home</h2>
+                  <p>Charming home with patio</p>
+                </div>
+                <div class="card-avatar">
+                  <img src="images/seb.jpg" alt="seb" class="avatar">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-md-4">
+            <div class="card">
+              <div class="card-body" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('images/card-london.jpeg');">
+                <div class="card-category">
+                  <h3>London</h3>
+                </div>
+                <div class="card-desc">
+                  <h2>Anne's home</h2>
+                  <p>Charming home with patio</p>
+                </div>
+                <div class="card-avatar">
+                  <img src="images/anne.jpg" alt="Anne" class="avatar">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-md-4">
+            <div class="card">
+              <div class="card-body" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('images/card-paris.jpg');">
+                <div class="card-category">
+                  <h3>Paris</h3>
+                </div>
+                <div class="card-desc">
+                  <h2>Romain's home</h2>
+                  <p>Charming home with patio</p>
+                </div>
+                <div class="card-avatar">
+                  <img src="images/romain.jpeg" alt="Romain" class="avatar">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- newsletter sign-up form -->
+
+    <form class="form-inline text-center padded">
+      <h2>Get news from us</h2>
+        <p class="bottom-margin">Leave us your mail and get news from us</p>
+      <div class="form-group">
+        <label class="sr-only">Email</label>
+      </div>
+      <div class="form-group">
+        <label for="email" class="email"></label>
+        <input type="email" class="form-control" id="email" placeholder="bob@gmail.com">
+      </div>
+      <button type="submit" class="btn btn-primary">Subscribe</button>
+    </form>
+
+    <!-- footer -->
+
+    <div class="footer">
+      <ul class="list-inline">
+        <li><a href="#"><i class="fa fa-youtube fa-2x"></i></a></li>
+        <li><a href="#"><i class="fa fa-instagram fa-2x"></i></a></li>
+        <li><a href="#"><i class="fa fa-facebook fa-2x"></i></a></li>
+        <li><a href="#"><i class="fa fa-twitter fa-2x"></i></a></li>
+      </ul>
+      <p>This is a Airbnb Home challenge @ LeWagon</p>
+    </div>

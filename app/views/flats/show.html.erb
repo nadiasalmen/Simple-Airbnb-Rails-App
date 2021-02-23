@@ -1,5 +1,5 @@
-<div class="container-fluid p-0" id="map" style="background-image: url('<%= image_path "#{@flat.url}" %>');">
-</div>
+<div class="container-fluid p-0" id="map" style="background-image: url('<%= cl_image_path @flat.photos.first.key, height: 200 %>')">
+      </div>
 <div class="container margin-top-negative">
   <div class="row">
     <div class="col-8">
@@ -7,9 +7,24 @@
         <h1><%= @flat.name %></h1>
         <p class="mt-2 font-style-italic"><%= @flat.address %></p>
       </div>
-      <div class="bg-light shadow p-3 mb-4 rounded h-100">
+      <div class="bg-light shadow p-3 mb-4 rounded">
         <h2>A bit more about this flat...</h2>
         <p class="mt-2"><%= @flat.description %></p>
+      </div>
+      <div class="bg-light shadow p-3 mb-4 rounded">
+        <div class="row">
+          <div class="col-12">
+            <%= cl_image_tag @flat.photos.first.key, class: "w-100" %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6 pr-0">
+            <%= cl_image_tag @flat.photos[1].key, class: "w-100 h-100", crop: :fill %>
+          </div>
+          <div class="col-6 pl-0">
+            <%= cl_image_tag @flat.photos[2].key, class: "w-100 h-100", crop: :fill %>
+          </div>
+        </div>
       </div>
     </div>
     <div class="col-4">
