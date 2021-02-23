@@ -64,6 +64,12 @@ flat = Flat.new(
   number_of_guests: rand(2..4),
   url: "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2546&q=80"
 )
+file = URI.open('https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2546&q=80')
+flat.photos.attach(io: file, filename: "#{flat.name}1.png", content_type: 'image/png')
+file = URI.open('https://images.unsplash.com/photo-1484154218962-a197022b5858?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2553&q=80')
+flat.photos.attach(io: file, filename: "#{flat.name}2.png", content_type: 'image/png')
+file = URI.open('https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80')
+flat.photos.attach(io: file, filename: "#{flat.name}3.png", content_type: 'image/png')
 flat.user = (User.all - [User.first]).sample
 flat.save!
 puts "Created flat with id #{flat.id} - Belongs to user: #{flat.user.email}"
@@ -89,6 +95,12 @@ flat = Flat.new(
   number_of_guests: rand(2..4),
   url: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2550&q=80"
 )
+file = URI.open('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2550&q=80')
+flat.photos.attach(io: file, filename: "#{flat.name}1.png", content_type: 'image/png')
+file = URI.open('https://images.unsplash.com/photo-1523192193543-6e7296d960e4?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2550&q=80')
+flat.photos.attach(io: file, filename: "#{flat.name}2.png", content_type: 'image/png')
+file = URI.open('https://images.unsplash.com/photo-1502672023488-70e25813eb80?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2159&q=80')
+flat.photos.attach(io: file, filename: "#{flat.name}3.png", content_type: 'image/png')
 flat.user = (User.all - [User.first]).sample
 flat.save!
 puts "Created flat with id #{flat.id} - Belongs to user: #{flat.user.email}"
@@ -114,6 +126,12 @@ flat = Flat.new(
   number_of_guests: rand(2..4),
   url: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2550&q=80"
 )
+file = URI.open('https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2550&q=80')
+flat.photos.attach(io: file, filename: "#{flat.name}1.png", content_type: 'image/png')
+file = URI.open('https://images.unsplash.com/photo-1536376072261-38c75010e6c9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2551&q=80')
+flat.photos.attach(io: file, filename: "#{flat.name}2.png", content_type: 'image/png')
+file = URI.open('https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80')
+flat.photos.attach(io: file, filename: "#{flat.name}3.png", content_type: 'image/png')
 flat.user = (User.all - [User.first]).sample
 flat.save!
 puts "Created flat with id #{flat.id} - Belongs to user: #{flat.user.email}"
@@ -139,6 +157,12 @@ flat = Flat.new(
   number_of_guests: rand(2..4),
   url: "https://images.unsplash.com/photo-1575517111478-7f6afd0973db?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2550&q=80"
 )
+file = URI.open('https://images.unsplash.com/photo-1575517111478-7f6afd0973db?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2550&q=80')
+flat.photos.attach(io: file, filename: "#{flat.name}1.png", content_type: 'image/png')
+file = URI.open('https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2173&q=80')
+flat.photos.attach(io: file, filename: "#{flat.name}2.png", content_type: 'image/png')
+file = URI.open('https://images.unsplash.com/photo-1433849665221-d2f93042ae54?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2978&q=80')
+flat.photos.attach(io: file, filename: "#{flat.name}3.png", content_type: 'image/png')
 flat.user = (User.all - [User.first]).sample
 flat.save!
 puts "Created flat with id #{flat.id} - Belongs to user: #{flat.user.email}"
@@ -164,6 +188,12 @@ flat = Flat.new(
   number_of_guests: rand(2..4),
   url: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2167&q=80"
 )
+file = URI.open('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2167&q=80')
+flat.photos.attach(io: file, filename: "#{flat.name}1.png", content_type: 'image/png')
+file = URI.open('https://images.unsplash.com/photo-1499916078039-922301b0eb9b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1600&q=80')
+flat.photos.attach(io: file, filename: "#{flat.name}2.png", content_type: 'image/png')
+file = URI.open('https://images.unsplash.com/photo-1504494683949-7319a9ba12d1?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2550&q=80')
+flat.photos.attach(io: file, filename: "#{flat.name}3.png", content_type: 'image/png')
 flat.user = (User.all - [User.first]).sample
 flat.save!
 puts "Created flat with id #{flat.id} - Belongs to user: #{flat.user.email}"
@@ -189,6 +219,12 @@ flat = Flat.new(
   number_of_guests: rand(2..4),
   url: "https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2550&q=80"
 )
+file = URI.open('https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2550&q=80')
+flat.photos.attach(io: file, filename: "#{flat.name}1.png", content_type: 'image/png')
+file = URI.open('https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2550&q=80')
+flat.photos.attach(io: file, filename: "#{flat.name}2.png", content_type: 'image/png')
+file = URI.open('https://images.unsplash.com/photo-1486304873000-235643847519?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2978&q=80')
+flat.photos.attach(io: file, filename: "#{flat.name}3.png", content_type: 'image/png')
 flat.user = (User.all - [User.first]).sample
 flat.save!
 puts "Created flat with id #{flat.id} - Belongs to user: #{flat.user.email}"
