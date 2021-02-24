@@ -12,3 +12,41 @@
   border-radius: 1px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
+
+// homepage cards -> change!
+
+.cards-container {
+  background-color: #F4F4F4;
+  padding: 100px;
+}
+
+.card-body {
+  background-size: cover;
+  height: 180px;
+  position: relative;
+  display: flex;
+  color: white;
+  padding: 15px;
+}
+
+.card-category {
+  position:absolute;
+  text-transform: uppercase;
+  padding: 0;
+}
+
+.card-desc {
+  position: absolute;
+  bottom: 10px;
+}
+
+.card-avatar {
+  position: absolute;
+  top: 5px;
+  right: 5px
+}
+
+.card-body h3 {
+  margin:0;
+}
+

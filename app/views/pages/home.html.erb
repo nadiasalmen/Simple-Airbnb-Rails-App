@@ -1,14 +1,13 @@
-<h1>HOMEPAGE</h1>
-
-<%= link_to 'Ir a los departamentos', flats_path, :class => "btn btn-outline-primary m-1 text-center p-auto"  %>
-
 <!-- banner -->
 
-    <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://unsplash.it/1200/600');">
+    <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1469022563428-aa04fef9f5a2?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8YXBhcnRtZW50c3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60');">
       <div class="banner-content">
         <h1>Welcome Home</h1>
         <p>Rent unique places to stay from local hosts in 190+ countries. How it works</p>
-        <a class="btn btn-primary btn-lg">How it works</a>
+        <div class="d-flex justify-content-center">
+          <a class="btn btn-primary btn-lg mx-2">How it works</a>
+          <%= link_to 'Search Flats', flats_path, :class => "btn btn-primary btn-lg mx-2"  %>
+        </div>
       </div>
     </div>
     <!-- features -->
@@ -17,28 +16,28 @@
         <div class="row">
           <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="card features">
-              <img src="images/globe.png" alt="globe">
+              <%= image_tag "https://images.unsplash.com/photo-1545197680-433442d91dcf?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8dGhlJTIwd29ybGR8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60", id: "map" %>
               <h4>Discover the world</h4>
               <p>The earth is your new home.</p>
             </div>
           </div>
           <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="card features">
-              <img src="images/dollar.png" alt="dollar">
+              <%= image_tag "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8cGF5JTIwb25saW5lfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60", id: "map" %>
               <h4>Pay online</h4>
               <p>No cash issues anymore.</p>
             </div>
           </div>
         <div class="col-xs-12 col-sm-6 col-md-3">
           <div class="card features">
-            <img src="images/beer.png" alt="beer">
+            <%= image_tag "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8cGFydHl8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60", id: "map" %>
             <h4>Meet people</h4>
             <p>Discover new culture and lifestyle.</p>
           </div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-3">
           <div class="card features">
-            <img src="images/heart.png" alt="heart">
+            <%= image_tag "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8bG92ZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60", id: "map" %>
             <h4>Share and love</h4>
             <p>Join a community you will love.</p>
           </div>
@@ -52,48 +51,45 @@
         <div class="row">
           <div class="col-xs-12 col-md-4">
             <div class="card">
-              <div class="card-body" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('images/card-brussels.jpeg');">
+              <div class="card-body" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://www.quever.travel/wp-content/uploads/2020/05/Bruselas.jpg');">
                 <div class="card-category">
                   <h3>Brussel</h3>
                 </div>
                 <div class="card-desc">
-                  <h2>Seb's home</h2>
                   <p>Charming home with patio</p>
                 </div>
                 <div class="card-avatar">
-                  <img src="images/seb.jpg" alt="seb" class="avatar">
+                  <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqbxz8YxJJlLPyfdKLtqbb-vQinCsBwakNgA&usqp=CAU", class: "avatar" %>
                 </div>
               </div>
             </div>
           </div>
           <div class="col-xs-12 col-md-4">
             <div class="card">
-              <div class="card-body" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('images/card-london.jpeg');">
+              <div class="card-body" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR5piMsFPRoxz79zcjq_odnVVUV--EZRPiRg&usqp=CAU');">
                 <div class="card-category">
                   <h3>London</h3>
                 </div>
                 <div class="card-desc">
-                  <h2>Anne's home</h2>
                   <p>Charming home with patio</p>
                 </div>
                 <div class="card-avatar">
-                  <img src="images/anne.jpg" alt="Anne" class="avatar">
+                  <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqbxz8YxJJlLPyfdKLtqbb-vQinCsBwakNgA&usqp=CAU", class: "avatar" %>
                 </div>
               </div>
             </div>
           </div>
           <div class="col-xs-12 col-md-4">
             <div class="card">
-              <div class="card-body" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('images/card-paris.jpg');">
+              <div class="card-body" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://hipertextual.com/files/2013/04/Paris.jpg');">
                 <div class="card-category">
                   <h3>Paris</h3>
                 </div>
                 <div class="card-desc">
-                  <h2>Romain's home</h2>
                   <p>Charming home with patio</p>
                 </div>
                 <div class="card-avatar">
-                  <img src="images/romain.jpeg" alt="Romain" class="avatar">
+                  <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqbxz8YxJJlLPyfdKLtqbb-vQinCsBwakNgA&usqp=CAU", class: "avatar" %>
                 </div>
               </div>
             </div>
@@ -106,17 +102,21 @@
 
     <!-- newsletter sign-up form -->
 
-    <form class="form-inline text-center padded">
+    <form class="text-center padded">
       <h2>Get news from us</h2>
         <p class="bottom-margin">Leave us your mail and get news from us</p>
       <div class="form-group">
         <label class="sr-only">Email</label>
       </div>
-      <div class="form-group">
-        <label for="email" class="email"></label>
-        <input type="email" class="form-control" id="email" placeholder="bob@gmail.com">
+      <div class="container">
+        <div class="row">
+          <div class="col-6 m-auto">
+            <label for="email" class="email"></label>
+            <input type="email" class="form-control" id="email" placeholder="bob@gmail.com">
+            <button type="submit" class="btn btn-primary w-100 my-2">Subscribe</button>
+          </div>
+        </div>
       </div>
-      <button type="submit" class="btn btn-primary">Subscribe</button>
     </form>
 
     <!-- footer -->
