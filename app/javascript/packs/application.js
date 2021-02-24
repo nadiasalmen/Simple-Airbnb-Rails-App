@@ -12,6 +12,7 @@ import 'bootstrap';
 
 // Components imports
 import { initUpdateNavbarOnScroll } from '../components/navbar';
+import { loadDynamicBannerText } from '../components/banner';
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -24,4 +25,5 @@ import { initUpdateNavbarOnScroll } from '../components/navbar';
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   initUpdateNavbarOnScroll();
+  loadDynamicBannerText();
 });
