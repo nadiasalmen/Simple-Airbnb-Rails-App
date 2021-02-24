@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
     @booking.status = 'New'
     authorize @booking
     if @booking.save
-      redirect_to flat_path(@flat)
+      redirect_to flat_path(@flat), notice: 'Booking created successfully!'
       # Same:
       # redirect_to @flat
     else

@@ -13,6 +13,10 @@
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
+.card:hover {
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
 // Homepage cards
 
 .home-cards {
@@ -22,4 +26,5 @@
   padding: 16px 12px;
   flex-grow: 1;
 }
+
 
