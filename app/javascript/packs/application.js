@@ -16,6 +16,7 @@ import { loadDynamicBannerText } from '../components/banner';
 
 // Plugins imports
 import { initMapbox } from '../plugins/init_mapbox';
+import { initSweetalert } from '../plugins/init_sweetalert';
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -29,4 +30,9 @@ document.addEventListener('turbolinks:load', () => {
   initUpdateNavbarOnScroll();
   loadDynamicBannerText();
   initMapbox();
+  initSweetalert('#sweet-alert-demo', {
+    title: "Booking Confirmation",
+    text: "Your booking has been confirm!",
+    icon: "success"
+  });
 });
