@@ -1,6 +1,6 @@
 class FlatsController < ApplicationController
   before_action :set_flat, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show, :search]
 
   def index
     if params[:query].present?
@@ -11,6 +11,18 @@ class FlatsController < ApplicationController
       # @flats = Flat.all
       @flats = policy_scope(Flat).order(created_at: :desc)
     end
+    @markers = @flats.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
+  end
+
+  def search
+    # route -> /search?query=Buenos Aires
+    @flats = policy_scope(Flat).near(params[:query], 30)
+
     @markers = @flats.geocoded.map do |flat|
       {
         lat: flat.latitude,

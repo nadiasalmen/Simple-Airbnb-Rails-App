@@ -8,8 +8,6 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    # @booking.start_date = params[:booking][:start_date]
-    # @booking.end_date = params[:booking][:end_date]
     @booking.flat = @flat
     @booking.user = current_user
     @booking.status = 'New'

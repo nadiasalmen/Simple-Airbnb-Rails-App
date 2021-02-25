@@ -22,6 +22,10 @@ class FlatPolicy < ApplicationPolicy
     true
   end
 
+  def search?
+    true
+  end
+
   # Method edit? is not necessary because it can be included with method update?
   # def edit?
   #   # current_user => user
