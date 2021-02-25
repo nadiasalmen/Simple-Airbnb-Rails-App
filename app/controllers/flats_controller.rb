@@ -11,6 +11,12 @@ class FlatsController < ApplicationController
       # @flats = Flat.all
       @flats = policy_scope(Flat).order(created_at: :desc)
     end
+    @markers = @flats.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
 
   def new

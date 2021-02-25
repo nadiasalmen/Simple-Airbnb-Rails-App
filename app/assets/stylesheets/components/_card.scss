@@ -1,8 +1,8 @@
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 16px;
-  padding: 16px 12px;
+  padding: 0px 12px 0px 0px;
   flex-grow: 1;
 }
 
@@ -27,4 +27,12 @@
   flex-grow: 1;
 }
 
+// Card images
+
+#card-image {
+  height: 350px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
 

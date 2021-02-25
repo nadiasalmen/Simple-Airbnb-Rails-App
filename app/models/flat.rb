@@ -12,4 +12,8 @@ class Flat < ApplicationRecord
   validates :description, length: { in: 10..500 }
   validates :number_of_guests, inclusion: { in: 1..10 }
   validates :price_per_night, numericality: true
+
+  # geocoder:
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end

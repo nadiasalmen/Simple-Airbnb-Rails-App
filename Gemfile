@@ -38,6 +38,9 @@ gem 'devise'
 # Add pundit
 gem 'pundit'
 
+# Add geocoder
+gem 'geocoder'
+
 # To add secret keys
 gem 'dotenv-rails', groups: [:development, :test]
 
