@@ -12,7 +12,6 @@
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mx-1" name="query" type="search" placeholder="Search" aria-label="Search" value="<%= params[:query] %>">
         <button class="btn btn-primary mx-3 text-white my-2 my-sm-0" type="submit">Search</button>
-        <!-- <%= link_to 'Search', {controller: "flats", :action => "search", query: :params} , :method=>:get, class: "btn btn-primary mx-3 text-white my-2 my-sm-0"  %> -->
       </form>
       <% if user_signed_in? %>
         <li class="nav-item dropdown">
@@ -27,12 +26,13 @@
             <% end %>
             <%= link_to "My bookings", "#", class: "dropdown-item" %>
             <%= link_to "My flats", "#", class: "dropdown-item" %>
+            <%= link_to "Edit profile", edit_user_registration_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <%= link_to "Login", new_user_session_path, class: "btn btn-dark" %>
         </li>
       <% end %>
     </ul>
