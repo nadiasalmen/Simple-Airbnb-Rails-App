@@ -2,6 +2,7 @@
   "name": "Simple_Airbnb_Rails_App",
   "private": true,
   "dependencies": {
+    "@mapbox/mapbox-gl-geocoder": "^4.7.0",
     "@rails/actioncable": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.3.0",
