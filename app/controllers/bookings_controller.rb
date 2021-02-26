@@ -12,14 +12,13 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.status = 'New'
     authorize @booking
-    @booking.save
-    # if @booking.save
-    #   redirect_to flat_path(@flat), notice: 'Booking created successfully!'
-    #   # Same:
-    #   # redirect_to @flat
-    # else
-    #   render 'flats/show', object: @flat, alert: 'Couldn´t create booking!'
-    # end
+    if @booking.save
+      redirect_to flat_path(@flat), notice: 'Booking created successfully!'
+      # Same:
+      # redirect_to @flat
+    else
+      render 'flats/show', object: @flat, alert: 'Couldn´t create booking!'
+    end
   end
 
   private
