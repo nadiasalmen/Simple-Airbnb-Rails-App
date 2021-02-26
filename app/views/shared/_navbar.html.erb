@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
   <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "https://static9.depositphotos.com/1364916/1110/v/600/depositphotos_11108900-stock-illustration-houses-apartments-with-tree-logo.jpg", :style => "height: 56px" %>
+    <i class="fas fa-home" id="logo"><p id="logo-text">@ home</p></i>
   <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,10 +9,17 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mx-1" name="query" type="search" placeholder="Search" aria-label="Search" value="<%= params[:query] %>">
-        <button class="btn btn-primary mx-3 text-white my-2 my-sm-0" type="submit">Search</button>
-      </form>
+
+      <%= form_tag flats_path, method: :get, :class => 'form-inline my-2 my-lg-0' do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control mx-1",
+          placeholder: "Find a flat"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary mx-3 text-white my-2 my-sm-0" %>
+      <% end %>
+
+
       <% if user_signed_in? %>
         <li class="nav-item dropdown">
           <% if current_user.avatar.present? %>

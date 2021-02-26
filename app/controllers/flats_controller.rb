@@ -4,27 +4,14 @@ class FlatsController < ApplicationController
 
   def index
     if params[:query].present?
-      @query = params[:query]
       # @flats = Flat.where("name LIKE ?", "%#{params[:query]}%")
-      @flats = policy_scope(Flat).where("name LIKE ?", "%#{params[:query]}%").order(created_at: :desc)
+      # sql_query = 'name @@ :query OR description @@ :query OR address @@ :query'
+      # @flats = policy_scope(Flat).where(sql_query, query: "%#{params[:query]}%")
+      @flats = policy_scope(Flat).search_by_name_by_description_and_by_address(params[:query])
     else
       # @flats = Flat.all
-      @flats = policy_scope(Flat).order(created_at: :desc)
+      @flats = policy_scope(Flat)
     end
-    @markers = @flats.geocoded.map do |flat|
-      {
-        lat: flat.latitude,
-        lng: flat.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { flat: flat }),
-        image_url: helpers.asset_url('marker.png')
-      }
-    end
-  end
-
-  def search
-    # route -> /search?query=Buenos Aires
-    @flats = policy_scope(Flat).near(params[:query], 30)
-
     @markers = @flats.geocoded.map do |flat|
       {
         lat: flat.latitude,

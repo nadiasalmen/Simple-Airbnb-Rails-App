@@ -6,5 +6,4 @@ Rails.application.routes.draw do
     resources :bookings, only: [:create]
   end
   # resources :bookings, only: [:index, :show, :edit, :update]
-  get '/search', to: 'flats#search'
 end
