@@ -34,3 +34,11 @@ body, h1, h2, h3, h4, p {
 .features img {
   width: 100px;
 }
+
+a {
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+}

@@ -1,11 +1,15 @@
 <div class="card bg-light">
-  <div id="card-image" class="d-block w-100"style="background-image: url('<%= cl_image_path flat.photos.first.key, height: 200 %>')">
-  </div>
-  <div class="p-3 flex-grow-1 bg-light d-flex flex-column">
-    <div class="flex-grow-1">
-      <h4><%= flat.name %></h4>
+  <%= link_to flat_path(flat) do %>
+    <div id="info-card-image" class="d-block w-100"style="background-image: url('<%= cl_image_path flat.photos.first.key, height: 100 %>')">
     </div>
-    <div class="d-md-flex">
+  <% end %>
+  <div class="p-3 flex-grow-1 bg-light d-flex flex-column">
+    <%= link_to flat_path(flat) do %>
+      <div class="flex-grow-1">
+        <p><strong><%= flat.name %></strong></p>
+      </div>
+    <% end %>
+    <div class="d-md-flex justify-content-between">
       <p class="my-0"><i class="fas fa-user-friends"></i>  <%= flat.number_of_guests %></p>
       <p class="mx-2 my-0"><i class="fas fa-euro-sign"></i>  <%= flat.price_per_night %></p>
     </div>
