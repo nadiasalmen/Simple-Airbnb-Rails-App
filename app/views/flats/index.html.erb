@@ -1,7 +1,7 @@
 <div class="container my-3">
   <div class="container">
     <h1>All our Flats</h1>
-    <p>All <%= @flats.count %> flats</p>
+    <p>All <%= pluralize @flats.count, "flat" %></p>
   </div>
   <div class="container d-flex">
     <div class="cards">
